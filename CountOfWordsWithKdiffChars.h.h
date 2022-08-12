@@ -7,14 +7,14 @@ u64 pwr(u64 x, u64 n){
 	return xx;
 }
 
-u64 *countOfWordsK_LenAlphaBet(u64 m, u64 k, u64 *K, u64 *L){
-	if(k>m){return 0;}
+u64 *countOfWordsK_LenAlphaBet(u64 wordLen, u64 alphabetLen, u64 *K, u64 *countOfWords){
+	if(alphabetLen>wordLen){return 0;}
 	u64 lim=0, z_in_n=1;
 
-	for (u64 n = 0; n < k; n+=1)
+	for (u64 n = 0; n < alphabetLen; n+=1)
 	{
-		L[n]=pwr(n+1,m);
-		K[n]=L[n];
+		countOfWords[n]=pwr(n+1,wordLen);
+		K[n]=countOfWords[n];
 
 		for (u64 z = 0; z < n; z+=1)
 		{
@@ -27,18 +27,18 @@ u64 *countOfWordsK_LenAlphaBet(u64 m, u64 k, u64 *K, u64 *L){
 			}
 			//printf("%llu\n", z_in_n);
 
-			L[n]-=L[z]*z_in_n;
-			if(n==(k-1)){
+			countOfWords[n]-=countOfWords[z]*z_in_n;
+			if(n==(alphabetLen-1)){
 				K[lim]=z_in_n;
 				lim+=1;
 			}
 		}
 		K[lim]=1;
 	}
-	for (u64 i = 0; i < k; i+=1)
+	for (u64 i = 0; i < alphabetLen; i+=1)
 	{
-		L[i]*=K[i];
+		countOfWords[i]*=K[i];
 	}
 	//printf("\n\n");
-	return L;
+	return countOfWords;
 }
