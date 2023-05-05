@@ -9,7 +9,7 @@ u64 pwr(u64 x, u64 n){
 	return xx;
 }
 
-u64 *countOfWordsK_LenAlphaBet(u64 wordLen, u64 alphabetLen, u64 *K, u64 *countOfWords){
+u64 *CountOfWordsOnAlphabetK(u64 wordLen, u64 alphabetLen, u64 *K, u64 *countOfWords){
 	if(alphabetLen>wordLen){return 0;}
 	u64 lim=0, z_in_n=1;
 
