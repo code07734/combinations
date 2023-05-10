@@ -1,5 +1,5 @@
 #include "nctypes.h"
-//Count number of substrings with exactly k distinct characters
+//Count number of m-words on alphabet n with exactly k distinct characters
 u64 pwr(u64 x, u64 n){
 	u64 xx=1;
 	for (u64 i = 0; i < n; i+=1)
