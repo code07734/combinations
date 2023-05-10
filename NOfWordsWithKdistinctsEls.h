@@ -9,7 +9,7 @@ u64 pwr(u64 x, u64 n){
 	return xx;
 }
 
-void NOfSubStrsWithKdistinctsEls(u64 alphabetLen, u64 wordLen, u64 subAlphabetLen, u64 *numb){
+void NOfwordsWithKdistinctsEls(u64 alphabetLen, u64 wordLen, u64 subAlphabetLen, u64 *numb){
 	u64 combsOfi=1,combsOfSubi=1,*NOfSubA,*NOfWords,*NOfAllWords;
 	NOfSubA=numb+0x2000;
 	NOfWords=numb+0x1000;
